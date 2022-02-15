@@ -6,3 +6,8 @@ customization:
   rime_version: 1.5.3
 patch:
   "style/color_scheme": wii
+  "style/font_face": "Menlo"  # 字体名称，从记事本等处的系统字体对话框里能看到
+  "style/font_point": 14     # 字号，只认数字的，不认「五号」、「小五」这样的
+  "style/horizontal": true      # 候选横排
+  "style/inline_preedit": true  # 内嵌编码（仅支持TSF）
+  "style/display_tray_icon": true  # 显示托盘图标
