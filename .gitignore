@@ -3,6 +3,12 @@
 ######################
 *.userdb/**
 *.userdb.old/**
+*~
+.*~
+*userdb/
+/build/*
+/user.yaml
+/installation.yaml
 ######################
 # Logs
 ######################
