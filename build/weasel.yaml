@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.5.3
   timestamps:
     weasel: 1561218314
-    weasel.custom: 1644991864
+    weasel.custom: 1645068103
 app_options:
   cmd.exe:
     ascii_mode: true
@@ -10,7 +10,7 @@ app_options:
     ascii_mode: true
   findandrunrobot.exe:
     ascii_mode: true
-    "style/color_scheme": win10
+    "style/color_scheme": mojave_dark
   gvim.exe:
     ascii_mode: true
   tcmatch64.exe:
@@ -71,7 +71,7 @@ preset_color_schemes:
     name: "沙漠夜／Mojave Dark"
     text_color: 0xdedddd
 style:
-  color_scheme: Micosoft
+  color_scheme: mojave_dark
   display_tray_icon: true
   font_face: "Microsoft YaHei"
   font_point: 13
