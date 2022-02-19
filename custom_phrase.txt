@@ -65,7 +65,7 @@ MacBook Pro	mbp
 MacBook Air	mba
 Messenger	ms
 ㎡	pfm
-🐂️🍺️	nb	2
+🐂️🍺️	np	2
 Numbers	nb	1
 1Password	one	2
 OneDrive	one	1
