@@ -1,5 +1,8 @@
 var:
-  last_build_time: 1645254055
-  previously_selected_schema: easy_en
+  last_build_time: 1645266416
+  option:
+    simplification: true
+  previously_selected_schema: luna_pinyin
   schema_access_time:
-    easy_en: 1645253122
+    easy_en: 1645263411
+    luna_pinyin: 1645265041

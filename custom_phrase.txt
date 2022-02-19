@@ -25,6 +25,7 @@ Rime	rime	3
 GBK	gbk
 UTF-8	utfba
 macOS High Sierra	macos	2
+Elasticsearch	es	2
 macOS Mojave	macos	3
 macOS	macos	4
 macOS Sierra	macos	1
@@ -75,3 +76,6 @@ Mac	mac
 Wi-Fi	wifi
 Apple ID	appleid
 QQ邮箱	qqyzxl
+MySQL    mysql
+opt/smart	opts
+Nginx	nginx

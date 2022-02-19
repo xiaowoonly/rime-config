@@ -33,3 +33,5 @@ function single_char_first_filter(input)
         yield(cand)
     end
 end
+
+return time

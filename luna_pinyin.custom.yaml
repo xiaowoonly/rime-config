@@ -27,8 +27,7 @@
 #
 
 patch:
-  __include: easy_en:/patch
-  easy_en/initial_quality: -0.618    
+
   # 载入朙月拼音扩充词库
   "translator/dictionary": luna_pinyin.extended
   #  拼写纠错
@@ -37,17 +36,33 @@ patch:
   # 改写拼写运算，含英文的词汇（luna_pinyin.cn_en.dict.yaml）不影响简拼
   "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
   #"switches/@0/reset": 1  #表示將 switcher 列表中的第一個元素（即 ascii_mode 開關）的初始值重設爲狀態1（即「英文」）。
+
+   #实现英文输入，既中文混输，下文词库扩充还有介绍
+  __include: easy_en:/patch
+    #某些特殊方案需要指定方案名称，如微软双拼
+  #__include: easy_en:/patch_double_pinyin_mspy
+  #例如你不想在 luna_pinyin 中显示不在词典中的英文单词，就可以像这样，在 `luna_pinyin.custom.yaml` 的 `patch` 节点中添加关闭选项
+  easy_en/enable_sentence: false
+  #未使用连续输入增强功能时，英文模式下出现带有☯图案的无意义单词
+  #这是因为开启了造句功能而导致的，连续输入增强需依靠该功能才能工作（开启连续输入增强后会自动隐藏这些单词）。  
+  #若是你没有使用连续输入增强，又不想看到这些无意义单词，可以在 `easy_en.custom.yaml` 的 `patch` 节点中添加选项以关闭造句功能。
+  translator/enable_sentence: false
+  #连续输入增强功能太卡/如何关闭连续输入增强的分词功能
+  easy_en/split_sentence: false
+  #混输时英文单词排的太靠后
+  easy_en/initial_quality: -1  
   # 加载easy_en依赖
-  "schema/dependencies/@1": easy_en
+  #"schema/dependencies/@1": easy_en
   # 载入翻译英文的码表翻译器，取名为 english
-  "engine/translators/@4": table_translator@english
+  #"engine/translators/@4": table_translator@english
   # english翻译器的设定项
-  english:
-    dictionary: easy_en
-    spelling_hints: 9
-    enable_completion: false # 是否启用英文输入联想补全
-    enable_sentence: false # 混输时不出现带有图案的英文
-    initial_quality: -0.5 # 英文候选词的位置, 数值越大越靠前。
+  #english:
+    #dictionary: easy_en
+    #spelling_hints: 9
+    #enable_completion: true # 是否启用英文输入联想补全
+    #enable_sentence: false # 混输时不出现带有图案的英文
+    #initial_quality: -0.5 # 英文候选词的位置, 数值越大越靠前。
+
 #模糊拼音
   'speller/algebra':
     - erase/^xx$/                      # 第一行保留
@@ -142,7 +157,7 @@ patch:
       states: [ 中文, 西文 ]
     - name: emoji_suggestion # Emoji 开关
       reset: 1
-      states: [ "Yes", "No" ]
+      states: [ "🈚️", "🈶️" ]
     - name: full_shape
       states: [ 半角, 全角 ]
     - name: simplification # (※1) 繁简转换
@@ -156,12 +171,14 @@ patch:
         - UTF-8
         - GBK
         - GB2312
+
   engine/translators:
     # - lua_translator@date_translator
     # - lua_translator@week_translator
     - punct_translator
     - script_translator
     - table_translator@custom_phrase
+
   #启用罕见字过滤
   engine/filters:
     - simplifier@emoji_suggestion
@@ -170,6 +187,7 @@ patch:
     - uniquifier
     #- charset_filter@gbk
     #- single_char_filter
+
   engine/processors:
     - ascii_composer
     - recognizer
@@ -185,10 +203,12 @@ patch:
   #   - abc_segmentor
   #   - punct_segmentor
   #   - fallback_segmentor
+
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all # Emoji 显示注释
+
   reverse_lookup: {}
   
   punctuator:
@@ -225,12 +245,12 @@ patch:
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
 
+  "engine/translators/@6": lua_translator@date_translator
+
 # Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
-  # __include: easy_en:/patch
-  # easy_en/enable_sentence: false
 # Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
   __include: grammar:/hant
 # Rx: BlindingDark/rime-lua-select-character:customize:schema=luna_pinyin {
   __include: lua_select_character:/patch
+  __include: lua_time:/patch
 # }
-
