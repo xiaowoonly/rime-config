@@ -41,6 +41,8 @@ use_preset_vocabulary: true
 #此處爲明月拼音擴充詞庫（基本）默認鏈接載入的詞庫，有朙月拼音官方詞庫、明月拼音擴充詞庫（漢語大詞典）、明月拼音擴充詞庫（詩詞）、明月拼音擴充詞庫（含西文的詞彙）。如果不需要加載某个詞庫請將其用「#」註釋掉。
 #雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。
 
+#-----词库外挂-----
+#luna_pinyin.kaifa.dict.yaml 即输入luna_pinyin.kaifa
 import_tables:
   - essay
   - luna_pinyin
