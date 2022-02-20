@@ -96,3 +96,4 @@ Windows	win
 YouTube	yt
 YouTube Premium	yp
 又双叒叕	yyy
+/opt/smart 	ops	2

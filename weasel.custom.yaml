@@ -35,8 +35,6 @@ patch:
   "app_options/findandrunrobot.exe":
     ascii_mode: true
 
-  style: 
-    color_scheme: wii # 皮肤类型如：so_young
-    font_face: "Microsoft YaHei" #字体
-    font_point: 13 #字体大小
+  style:
+    color_scheme: wii #皮肤类型如：so_young
     horizontal: false #true横排，false竖排
