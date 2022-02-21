@@ -27,7 +27,7 @@ patch:
     db_class: stabledb
     enable_completion: false
     enable_sentence: false
-    initial_quality: 2
+    initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
 
   engine/filters:
