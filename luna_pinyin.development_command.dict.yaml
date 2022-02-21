@@ -1,0 +1,36 @@
+# Rime Dictionary
+# encoding: utf-8
+#
+# Luna Pinyin Extended Dictionary(明月拼音扩充词库) - 自定义开法命令
+#
+# 小沃 <xiaowoonly@gmail.com>
+#
+# 部署位置->或者自己自定义：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 重新布署后生效
+#
+
+---
+name: luna_pinyin.development_command
+version: "2022.02.21"
+sort: by_weight
+use_preset_vocabulary: true
+...
+
+pwd	pwd	100
+kubernetes	kuber	100
+kubernetes	kubernetes	100
+ls	ls	100
+git	git	100
+cd	cd	100
+kubectl	kubec	100
+kubectl	kubectl	100
+docker	dock	100
+docker	docker	100
+bash  bash  100
+source  sour  100
+source  source  100
+curl  curl  100
