@@ -3,6 +3,8 @@
 #
 # Luna Pinyin Extended Dictionary(明月拼音扩充词库) - 中英文合成词
 #
+# 有些可能不生效，可以将那些放在 custom_phrase.txt 里边
+# 
 # 小沃 <xiaowoonly@gmail.com>
 #
 # 部署位置->或者自己自定义：
