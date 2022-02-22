@@ -35,4 +35,5 @@ import_tables:
   - luna_pinyin.ziran
   - luna_pinyin.cn_en
   - luna_pinyin.biaoqing
+  - luna_pinyin.chaizi
   - luna_pinyin.development_command
