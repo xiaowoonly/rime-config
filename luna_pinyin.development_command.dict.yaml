@@ -1,7 +1,7 @@
 # Rime Dictionary
 # encoding: utf-8
 #
-# Luna Pinyin Extended Dictionary(明月拼音扩充词库) - 自定义开法命令
+# Luna Pinyin Extended Dictionary(明月拼音扩充词库) - 开发常用命令
 #
 # 小沃 <xiaowoonly@gmail.com>
 #
@@ -20,12 +20,175 @@ sort: by_weight
 use_preset_vocabulary: true
 ...
 
-pwd	pwd	100
+#--------------------linux常用命令--------------------------------------
+# 帮助命令
+help  help  100
+man	man	100
+
+# 路径切换及查看
+cd	cd	100
+pwd	cd	100
+ls	ls	100
+find	find	100
+
+#文件|目录操作
+touch	touch	100
+ln	ln	100
+mkdir	mkdir	100
+rm	rm	100
+rm -r	rm	100
+mv	mv	100
+cp	cp	100
+cp -r	cp	100
+
+#文件|备份解压缩
+zipinfo	zipinfo	100
+zip	zip	100
+gzip	gzip	100
+gzip -d	gzip	100
+unzip	unzip	100
+gunzip	gunzip	100
+tar -xvzf	tarx	100
+tar -cvzf	tarc	100
+
+#文件|传输
+tftp	tftp	100
+curl	curl	100
+scp	scp	100
+rcp	rcp	100
+
+#文件|属性查看
+type	type	100
+du -h	duh	100
+ls -l	lsl	100
+
+#文件|目录权限设置
+chmod	chmod	100
+
+#文本|内容查看及过滤
+#文本|内容查看
+cat	cat	100
+more	more	100
+tail	tail	100
+head	head	100
+
+#文本|内容筛选过滤
+grep	grep	100
+sed	sed	100
+awk	awk	100
+tail	tail	100
+head	head	100
+cut	cut	100
+col	col	100
+
+#文本|编辑
+vi	vi	100
+vim	vi	100
+vim	vim	100
+
+#文本|输出到文本文件
+tee	tee	100
+
+#文本|内容处理
+join	join	100
+split	split	100
+uniq	uniq	100
+sort	sort	100
+paste	paste	100
+
+#用户|组操作
+#用户|增删改
+useradd	useradd	100
+adduser	adduser	100
+userdel	userdel	100
+usermod	usermod	100
+
+#用户|密码设置
+passwd	passwd	100
+
+#用户|组增删改
+groupadd	groupadd	100
+groupdel	groupdel	100
+groupmod	groupmod	100
+
+#用户|文件设置用户权限
+chown	chown	100
+
+#用户|切换
+su	su	100
+
+#任务管理器
+#任务管理器|进程
+ps	ps	100
+kill	kill	100
+
+#任务管理器|系统资源
+top	top	100
+vmstat	vmstat	100
+free	free	100
+df -h	df	100
+fdisk -l	fdisk	100
+ifconfig	ifconfig	100
+netstat	nets	100
+netstat	netstat	100
+
+#任务管理器|服务
+service	service	100
+chkconfig	chkc	100
+chkconfig	chkconfig	100
+
+#任务管理器|网络管理
+ifconfig	ifconfig	100
+ping	ping	100
+firewall	firewall	100
+firewall-cmd	firewall	100
+systemctl	systemc	100
+systemctl	systemctl	100
+
+#安装更新配置
+yum	yum	100
+sh	sh	100
+./	./	100
+
+#系统相关
+#系统相关|环境变量
+set	set	100
+export	export	100
+unset	unset	100
+
+#系统相关|关机与重启
+shutdown	shutdown	100
+shutdown -h	shutdown	100
+shutdown -r	shutdown	100
+poweroff	powero	100
+poweroff	poweroff	100
+reboot	reboot	100
+exit	exit	100
+
+#系统相关|查看系统信息
+uname	uname	100
+date	date	100
+last	last	100
+history	history	100
+who	who	100
+
+#系统相关|定时任务
+crontab	cron	100
+crontab	crontab	100
+
+#系统相关|运行管理员权限
+sudo	sudo	100
+
+#系统相关|其他
+clear	clear	100
+echo	echo	100
+
+#--------------------linux常用命令--------------------------------------
+
+#----------------------其他相关命令--------------------------------------
 kubernetes	kuber	100
 kubernetes	kubernetes	100
-ls	ls	100
 git	git	100
-cd	cd	100
 kubectl	kubec	100
 kubectl	kubectl	100
 docker	dock	100
@@ -33,3 +196,4 @@ docker	docker	100
 bash  bash  100
 source  sour  100
 source  source  100
+#----------------------其他相关命令--------------------------------------
