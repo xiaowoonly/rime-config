@@ -18,7 +18,8 @@ patch:
 
   key_binder/bindings: # 若开启, 去掉前面#
     # 翻页
-    #- { when: has_menu, accept: Tab, send: Page_Down }            # "tab" 键翻页, 和 "tab" 键分词只能二选一
+    #- { when: has_menu, accept: Tab, send: Page_Down }   # "tab" 键翻页, 和 "tab" 键分词只能二选一
+    #- {accept: Tab, send: Page_Down, when: composing} # "tab"一页中挪字
     - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
     - { when: paging, accept: minus, send: Page_Up } # "-" 上一页
     - { when: has_menu, accept: equal, send: Page_Down } # "=" 下一页

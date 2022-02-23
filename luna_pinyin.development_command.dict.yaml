@@ -56,6 +56,8 @@ tftp	tftp	100
 curl	curl	100
 scp	scp	100
 rcp	rcp	100
+rz -be	rz	100
+sz	sz	100
 
 #文件|属性查看
 type	type	100
@@ -128,6 +130,7 @@ vmstat	vmstat	100
 free	free	100
 df -h	df	100
 fdisk -l	fdisk	100
+config	config	100
 ifconfig	ifconfig	100
 netstat	nets	100
 netstat	netstat	100
