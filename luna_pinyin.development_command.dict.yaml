@@ -196,7 +196,9 @@ kubectl	kubec	100
 kubectl	kubectl	100
 docker	dock	100
 docker	docker	100
-bash  bash  100
-source  sour  100
-source  source  100
+bash	bash	100
+source	sour	100
+source	source	100
+#先执行此条语句 -> mysql格式化
+pager less -SFX	pagels	100
 #----------------------其他相关命令--------------------------------------
