@@ -41,27 +41,35 @@ patch:
   # 载入朙月拼音扩充词库
   "translator/dictionary": luna_pinyin.extended
 
+  #------------------------------------------------------------------------------------------------
   #实现英文输入，既中文混输
-  # 加载easy_en依赖
-  "schema/dependencies/@1": easy_en
+  #配置英文字典，自定义名叫 english 的 translator，然后把这个 translator 添加到数据方案中
+  #加载easy_en依赖
+  #"schema/dependencies/@1": easy_en
   # 载入翻译英文的码表翻译器，取名为 english
-  "engine/translators/@4": table_translator@english
+  #"engine/translators/@4": table_translator@english
   # english翻译器的设定项
-  english:
-    dictionary: easy_en
-    spelling_hints: 9
-    enable_completion: false # 是否启用英文输入联想补全
-    enable_sentence: false # 混输时不出现带有图案的英文
-    initial_quality: -0.5 # 英文候选词的位置, 数值越大越靠前。
+  #english:
+    #dictionary: easy_en
+    #spelling_hints: 9
+    #enable_completion: false # 是否启用英文输入联想补全
+    #enable_sentence: false # 混输时不出现带有图案的英文
+    #initial_quality: -0.5 # 英文候选词的位置, 数值越大越靠前
 
-  #------------------------------------------#手动安装 easy_en-------------------------
+  #注意这个时候需要 Rime 的配置目录中有 easy_en.dict.yaml 这个码表文件
+  #------------------------------------------------------------------------------------------------
+
+  #------------------------------------------#手动安装 easy_en----------单独显示英文输入---------------
   #参考：https://github.com/BlindingDark/rime-easy-en
   #本节内容仅为手动安装所需要进行的步骤，如果你使用 plum 进行安装，则不需要进行下面的操作。
   #连续输入增强的安装方式请参照上面的说明。
   #将 easy_en.schema.yaml easy_en.dict.yaml easy_en.yaml lua/easy_en.lua 复制到 rime 配置目录。
+  #------------------------------------------#手动安装 easy_en----------单独显示英文输入---------------
+
+  #------------------------------------------------------------------------------------------------
   #如果想要中英混输效果，以朙月拼音（luna_pinyin）为例，需要在 luna_pinyin.custom.yaml 文件中的 patch 下添加如下
   __include: easy_en:/patch
-  #某些特殊方案需要指定方案名称，如微软双拼 __include: easy_en:/patch_double_pinyin_mspy，
+  #某些特殊方案需要指定方案名称，如微软双拼 __include: easy_en:/patch_double_pinyin_mspy
   #地球拼音 easy_en:/patch_terra_pinyin
   #不想在 luna_pinyin 中显示不在词典中的英文单词
   easy_en/enable_sentence: false
@@ -72,7 +80,7 @@ patch:
   #通过调整 initial_quality 选项来调节英文单词在候选项中显示的位置
   #你可以尝试 0 到 0.5 左右的数值。数值越大，英文单词出现的就越靠前
   easy_en/initial_quality: 0.56
-  #--------------------------------------------------------------------------------------------
+  #------------------------------------------------------------------------------------------------
 
   # 快捷表情和符号
   punctuator:
