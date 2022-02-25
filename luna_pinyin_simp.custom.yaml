@@ -41,6 +41,7 @@ patch:
   # 载入朙月拼音扩充词库
   "translator/dictionary": luna_pinyin.extended
 
+  #实现英文输入，既中文混输
   # 加载easy_en依赖
   "schema/dependencies/@1": easy_en
   # 载入翻译英文的码表翻译器，取名为 english
@@ -202,8 +203,10 @@ patch:
   #'translator/preedit_format':
   #  - "xform/([nljqxyzcs])v/$1ü/"
 
-  # librime-lua 输入动态时间和日期
+  #librime-lua 输入动态时间和日期
   "engine/translators/@6": lua_translator@date_translator
   "engine/translators/@7": lua_translator@time_translator
   "engine/translators/@8": lua_translator@week_translator
 
+  #过滤器：单字在先
+  "engine/translators/@8": lua_translator@single_char_first_filter
