@@ -8,4 +8,12 @@ week_translator = require("week_translator")
 
 --- 过滤器：单字在先
 single_char_first_filter = require("single_char_first_filter")
---- 过滤器：单字在先
+
+--- Unicode 内码转译（输出任意Unicode字符）
+unicode_translator = require("unicode_translator")
+
+--- 数字转大写
+number_translator = require("number_translator")
+
+--- 计算
+calculator_translator = require("calculator_translator")

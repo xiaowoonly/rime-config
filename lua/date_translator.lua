@@ -1,3 +1,6 @@
+--- 时间翻译器
+---@param input any
+---@param seg any
 local function date_translator(input, seg)
     if (input == "date") then
         -- 英文日期
