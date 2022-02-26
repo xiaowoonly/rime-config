@@ -217,4 +217,4 @@ patch:
   "engine/translators/@8": lua_translator@week_translator
 
   #过滤器：单字在先
-  "engine/translators/@8": lua_translator@single_char_first_filter
+  "engine/translators/@next": lua_translator@single_char_first_filter

@@ -7,16 +7,5 @@ week_translator = require("week_translator")
 --------------------------获取当前时间日期------------------------------------
 
 --- 过滤器：单字在先
-function single_char_first_filter(input)
-    local l = {}
-    for cand in input:iter() do
-        if (utf8.len(cand.text) == 1) then
-            yield(cand)
-        else
-            table.insert(l, cand)
-        end
-    end
-    for cand in ipairs(l) do
-        yield(cand)
-    end
-end
+single_char_first_filter = require("single_char_first_filter")
+--- 过滤器：单字在先
