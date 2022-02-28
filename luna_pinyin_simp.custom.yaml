@@ -41,8 +41,8 @@ patch:
   # 载入朙月拼音扩充词库
   "translator/dictionary": luna_pinyin.extended
 
-  #------------------------------------------------------------------------------------------------
-  #实现英文输入，既中文混输
+  #-----------------------------------------实现英文输入，既中文混输-----------------------------------
+  #--------------------------------------------方法一-----------------------------------------------
   #配置英文字典，自定义名叫 english 的 translator，然后把这个 translator 添加到数据方案中
   #加载easy_en依赖
   #"schema/dependencies/@1": easy_en
@@ -59,6 +59,7 @@ patch:
   #注意这个时候需要 Rime 的配置目录中有 easy_en.dict.yaml 这个码表文件
   #------------------------------------------------------------------------------------------------
 
+  #--------------------------------------------方法二-----------------------------------------------
   #------------------------------------------#手动安装 easy_en----------单独显示英文输入---------------
   #参考：https://github.com/BlindingDark/rime-easy-en
   #本节内容仅为手动安装所需要进行的步骤，如果你使用 plum 进行安装，则不需要进行下面的操作。
@@ -66,7 +67,7 @@ patch:
   #将 easy_en.schema.yaml easy_en.dict.yaml easy_en.yaml lua/easy_en.lua 复制到 rime 配置目录。
   #------------------------------------------#手动安装 easy_en----------单独显示英文输入---------------
 
-  #------------------------------------------------------------------------------------------------
+  #"engine/translators/@4": table_translator@easy_en
   #如果想要中英混输效果，以朙月拼音（luna_pinyin）为例，需要在 luna_pinyin.custom.yaml 文件中的 patch 下添加如下
   __include: easy_en:/patch
   #某些特殊方案需要指定方案名称，如微软双拼 __include: easy_en:/patch_double_pinyin_mspy
@@ -79,7 +80,7 @@ patch:
   easy_en/split_sentence: false
   #通过调整 initial_quality 选项来调节英文单词在候选项中显示的位置
   #你可以尝试 0 到 0.5 左右的数值。数值越大，英文单词出现的就越靠前
-  easy_en/initial_quality: 0.56
+  easy_en/initial_quality: -0.56
   #------------------------------------------------------------------------------------------------
 
   # 快捷表情和符号
@@ -125,7 +126,7 @@ patch:
       #"<": ["《", "〈", "«", "<"]
       #">": ["》", "〉", "»", ">"]
 
-  recognizer/patterns/punct: "^/([a-z]+|[0-9]+)$"
+  recognizer/patterns/punct: "^/([a-z]+|[0-9]0?)$"
 
   # 模糊拼音
   "speller/algebra":
@@ -217,14 +218,14 @@ patch:
   "engine/translators/@8": lua_translator@week_translator
 
   #过滤器：单字在先
-  "engine/translators/@+": lua_translator@single_char_first_filter
+  "engine/translators/@9": lua_translator@single_char_first_filter
 
   #Unicode 内码转译
-  #"engine/translators/@next": lua_translator@unicode_translator
-  #recognizer/patterns/unicode: "^U.*$"
+  "engine/translators/@10": lua_translator@unicode_translator
+  recognizer/patterns/unicode: "^U.*$"
 
    #数字大写：贰仟零叁拾肆
-  #"engine/translators/@+": lua_translator@number_translator
+  "engine/translators/@11": lua_translator@number_translator
   
-  #"engine/translators/@+": lua_translator@calculator_translator
-  #recognizer/patterns/expression: "^=.*$"
+  "engine/translators/@12": lua_translator@calculator_translator
+  recognizer/patterns/expression: "^=.*$"

@@ -1,3 +1,4 @@
+--- 候选项重排序，使单字优先
 local function single_char_first_filter(input)
     local l = {}
     for cand in input:iter() do
