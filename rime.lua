@@ -10,10 +10,10 @@ week_translator = require("week_translator")
 single_char_first_filter = require("single_char_first_filter")
 
 --- Unicode 内码转译（输出任意Unicode字符）
-unicode_translator = require("unicode_translator")
+--- unicode_translator = require("unicode_translator")
 
 --- 数字转大写
-number_translator = require("number_translator")
+--- number_translator = require("number_translator")
 
 --- 计算
-calculator_translator = require("calculator_translator")
+--- calculator_translator = require("calculator_translator")

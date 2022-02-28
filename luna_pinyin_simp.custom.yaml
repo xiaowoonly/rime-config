@@ -220,11 +220,11 @@ patch:
   "engine/translators/@+": lua_translator@single_char_first_filter
 
   #Unicode 内码转译
-  "engine/translators/@next": lua_translator@unicode_translator
-  recognizer/patterns/unicode: "^U.*$"
+  #"engine/translators/@next": lua_translator@unicode_translator
+  #recognizer/patterns/unicode: "^U.*$"
 
    #数字大写：贰仟零叁拾肆
-  "engine/translators/@+": lua_translator@number_translator
+  #"engine/translators/@+": lua_translator@number_translator
   
   #"engine/translators/@+": lua_translator@calculator_translator
   #recognizer/patterns/expression: "^=.*$"
