@@ -1,0 +1,41 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.9.29.1
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Wed Feb 12 09:16:25 2014"
+  rime_version: 1.1
+
+patch:
+
+  # 特定App默认中/英文输入   
+  app_options:    
+    com.apple.Spotlight:             # 聚焦搜索
+        ascii_mode: true             # true默认英文,false默认中文
+    com.runningwithcrayons.Alfred:   # alfred
+        ascii_mode: true
+    com.apple.Terminal:              # 终端
+        ascii_mode: true
+    com.microsoft.VSCode:            # Visual Studio Code
+        ascii_mode: true
+        ascii_punct: true            # 中文状态输出英文标点(半角) 
+    com.tencent.Lemon:               # 腾讯柠檬
+        ascii_mode: true
+    com.apple.dt.Xcode:              # Xcode
+        ascii_mode: true
+    com.nektony.App-Cleaner-SII:     # App Cleaner & Uninstaller
+        ascii_mode: true
+
+  # 以下软件默认英文模式
+  "app_options/gvim.exe":
+    ascii_mode: true
+  "app_options/tcmatch64.exe":
+    ascii_mode: true
+  "app_options/totalcmd64.exe":
+    ascii_mode: true
+  "app_options/findandrunrobot.exe":
+    ascii_mode: true
+
+  #style:
+    #color_scheme: wii #皮肤类型如：so_young
+    #horizontal: false #true横排，false竖排
+  "style/color_scheme": wii
